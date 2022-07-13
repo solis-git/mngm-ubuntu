@@ -10,7 +10,7 @@
 # home - Sets a user’s home directory
 # createhome: yes - Create a home directory for a user  # Defaults to yes
 # createhome: no - Do not create a home directory for a user
-    - name: Adicionando usuário {{ NewUser }} sem 'id' específico e que associado ao grupo 'sudo'
+    - name: Adicionando usuário {{ NewUser }} sem 'id' específico e associado ao grupo 'sudo'
       ansible.builtin.user:
         name: "{{ NewUser }}"
         shell: /bin/bash
