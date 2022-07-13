@@ -6,5 +6,5 @@
     - name: Remoção do usuário "{{ UserToRemove }}" do sistema Linux
       ansible.builtin.user:
         name: "{{ UserToRemove }}"
-        state: present
+        state: absent
         remove: yes
