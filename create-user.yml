@@ -2,17 +2,14 @@
 - name: Criação de usuário com acesso a "sudo"
   hosts: all
   tasks:
-
-	# name - Defines the username that is present or to create
-	# groups - Adds users in secondary groups or use groups
-	# state: present - Creates a user or works with a user
-	# state: absent - Deletes a user
-	# shell - Specifies shell-type a user can work on
-	# home - Sets a user’s home directory
-	# createhome: yes - Create a home directory for a user  # Defaults to yes
-	# createhome: no - Do not create a home directory for a user
-
-	# Creating the user 
+# name - Defines the username that is present or to create
+# groups - Adds users in secondary groups or use groups
+# state: present - Creates a user or works with a user
+# state: absent - Deletes a user
+# shell - Specifies shell-type a user can work on
+# home - Sets a user’s home directory
+# createhome: yes - Create a home directory for a user  # Defaults to yes
+# createhome: no - Do not create a home directory for a user
     - name: Adicionando usuário {{ NewUser }} sem 'id' específico e que associado ao grupo 'sudo'
       ansible.builtin.user:
         name: {{ NewUser }}
