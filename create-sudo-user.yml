@@ -12,10 +12,10 @@
 # createhome: no - Do not create a home directory for a user
     - name: Adicionando usuário {{ NewUser }} sem 'id' específico e que associado ao grupo 'sudo'
       ansible.builtin.user:
-        name: {{ NewUser }}
+        name: "{{ NewUser }}"
         shell: /bin/bash
-        comment: {{ CommentNewUser }}
+        comment: "{{ CommentNewUser }}"
         groups: sudo
         append: yes
-        password: {{ PasswordNewUser }}
+        password: "{{ PasswordNewUser }}"
         createhome: yes
