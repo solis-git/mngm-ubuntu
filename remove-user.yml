@@ -3,7 +3,7 @@
   hosts: all
   tasks:
   # Removing the user shanky from the system 
-    - name: Remoção do usuário "{{ UserToRemove }}" do sistema Linux
+    - name: Remoção do usuário "{{ UserToRemove }}" e diretório "/home/{{ UserToRemove }}" do sistema Linux
       ansible.builtin.user:
         name: "{{ UserToRemove }}"
         state: absent
