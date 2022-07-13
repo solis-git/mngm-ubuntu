@@ -17,5 +17,5 @@
         comment: {{ CommentNewUser }}
         groups: sudo
         append: yes
-        password: '$6$dQhoAvXH$0jaxNuTX5rwdYokE0TAg8kfXEX3tr2gZEvmrfxlghK04J9twke2D/EWCB77YVlBptxw33xEHyurAtkWQkBxN30'
+        password: {{ PasswordNewUser }}
         createhome: yes
