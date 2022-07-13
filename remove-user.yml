@@ -1,0 +1,10 @@
+---
+- name: Remoção de usuário
+  hosts: all
+  tasks:
+  # Removing the user shanky from the system 
+    - name: Remoção do usuário "{{ UserToRemove }}" do sistema Linux
+      ansible.builtin.user:
+        name: "{{ UserToRemove }}"
+        state: absent
+        remove: yes
