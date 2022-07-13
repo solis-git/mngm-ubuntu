@@ -1,7 +1,7 @@
 ---
 - name: Criação de usuário com acesso a "sudo"
   hosts: all
-  remote_user: solis
+  become: True
   tasks:
 # name - Defines the username that is present or to create
 # groups - Adds users in secondary groups or use groups
