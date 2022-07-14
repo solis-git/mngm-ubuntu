@@ -3,7 +3,7 @@
   hosts: all
   tasks:
   - name: Upgrade OS (apt-get upgrade)
-    ansible.builtin.apt:
+    apt:
       upgrade: dist
       force_apt_get: yes
 #      upgrade: "{{ upgrade_mode }}"
