@@ -2,13 +2,13 @@
 - name: Atualização do Sistema
   hosts: all
   tasks:
-  - name: Upgrade the OS (apt-get dist-upgrade), Only run "update_cache=yes" if the last one is more than 3600 seconds ago
+  - name: Upgrade OS (apt-get upgrade)
     ansible.builtin.apt:
-      upgrade: "{{ upgrade_mode }}"
+      upgrade: full
+#      upgrade: "{{ upgrade_mode }}"
       update_cache: yes
       install_recommends: yes
       autoremove: yes
-      force: yes
 #      cache_valid_time: 3600
 # Para pacotes
 #  - name: Only upgrade a package if it is already installed.
