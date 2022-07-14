@@ -44,3 +44,8 @@
           line: "DenyGroups {{ deny_groups }}"
         when:
           - deny_groups != "None"
+      - name: Restart SSH, em todos os casos, para atualizar as configurações
+        ansible.builtin.systemd:
+          state: restarted
+          daemon_reload: yes
+          name: sshd
