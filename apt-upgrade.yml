@@ -1,0 +1,10 @@
+---
+- name: Atualização do Sistema
+  hosts: all
+  - name: Only run "update_cache=yes" if the last one is more than 3600 seconds ago
+    ansible.builtin.apt:
+      update_cache: yes
+      cache_valid_time: 3600
+  - name: Only upgrade a package if it is already installed.
+    ansible.builtin.apt:
+      only_upgrade: yes
