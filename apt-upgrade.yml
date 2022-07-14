@@ -4,14 +4,5 @@
   tasks:
   - name: Upgrade OS (apt-get upgrade)
     apt:
-      upgrade: dist
+      upgrade: "{{ upgrade_mode }}"
       force_apt_get: yes
-#      upgrade: "{{ upgrade_mode }}"
-      update_cache: yes
-      install_recommends: yes
-      autoremove: yes
-#      cache_valid_time: 3600
-# Para pacotes
-#  - name: Only upgrade a package if it is already installed.
-#    ansible.builtin.apt:
-#      only_upgrade: yes
