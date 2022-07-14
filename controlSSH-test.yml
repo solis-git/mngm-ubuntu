@@ -19,7 +19,7 @@
           regexp: "^AllowUsers"
           line: "AllowUsers {{ allowed_users }}"
         when:
-          - "{{ allowed_users }}|default('')"
+          - "{{ allowed_users|length > 0 }}"
       - name: 5.3.4 Verificando se o acesso por GRUPOS ao SSH está limitad | allow groups
         lineinfile:
           state: present
