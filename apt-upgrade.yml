@@ -4,7 +4,8 @@
   tasks:
   - name: Upgrade OS (apt-get upgrade)
     ansible.builtin.apt:
-      upgrade: full
+      upgrade: dist
+      force_apt_get: yes
 #      upgrade: "{{ upgrade_mode }}"
       update_cache: yes
       install_recommends: yes
