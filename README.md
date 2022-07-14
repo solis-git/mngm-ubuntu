@@ -8,7 +8,7 @@ mkpasswd --method=sha-512 PASSWORD
 ```
 
 
-### Template/Playbook de atualização do systema (apt upgrade)
+### Template/Playbook de atualização do sistema (apt upgrade)
 variável to template
 ```
 update_mode: safe
