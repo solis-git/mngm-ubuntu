@@ -35,7 +35,7 @@
           regexp: "^DenyUsers"
           line: "DenyUsers {{ deny_users }}"
         when:
-          - deny_users != "None"
+          - "{{ deny_users|length > 0 }}"
       - name: 5.3.4 Ensure SSH access is limited | denygroups
         lineinfile:
           state: present
