@@ -9,7 +9,10 @@
       owner: root
       group: root
       mode: 0600
-  # Restringindo quais usuários podem acessar remotamente o sistema via SSH, somente usuarios autorizados.
+# Restringindo quais usuários podem acessar remotamente o sistema via SSH, somente usuarios autorizados.
+# exemplo para alterar a condição
+# when:
+#  - "{{ allowed_users|length > 0 }}"
   - name: 5.3.4 Verificando se o acesso ao SSH está limitado
     block:
       - name: 5.3.4  Verificando se o acesso por USUARIOS ao SSH está limitado | allow users
@@ -20,8 +23,6 @@
           line: "AllowUsers {{ allowed_users }}"
         when:
           - allowed_users != "None
-        #when:
-        #  - "{{ allowed_users|length > 0 }}"
       - name: 5.3.4 Verificando se o acesso por GRUPOS ao SSH está limitad | allow groups
         lineinfile:
           state: present
