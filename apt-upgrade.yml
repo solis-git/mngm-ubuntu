@@ -6,6 +6,10 @@
     ansible.builtin.apt:
       update_cache: yes
       cache_valid_time: 3600
-  - name: Only upgrade a package if it is already installed.
+  - name: Upgrade the OS (apt-get dist-upgrade)
     ansible.builtin.apt:
-      only_upgrade: yes
+      upgrade: "{{ upgrade_mode }}"
+# Para pacotes
+#  - name: Only upgrade a package if it is already installed.
+#    ansible.builtin.apt:
+#      only_upgrade: yes
