@@ -6,9 +6,9 @@
     ansible.builtin.apt:
       upgrade: "{{ upgrade_mode }}"
       update_cache: yes
-      cache_valid_time: 3600
-
-
+      install_recommends: yes
+      autoremove: yes
+#      cache_valid_time: 3600
 # Para pacotes
 #  - name: Only upgrade a package if it is already installed.
 #    ansible.builtin.apt:
