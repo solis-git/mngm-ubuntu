@@ -44,7 +44,8 @@
         lineinfile:
           state: present
           dest: /root/.bashrc
-          line: 'HISTTIMEFORMAT="[%Y/%m/%d %T] "'
+          line: "HISTTIMEFORMAT="[%Y/%m/%d %T] ""
+          create: yes
       - name: Ajustando .bashrc
         lineinfile:
           state: present
