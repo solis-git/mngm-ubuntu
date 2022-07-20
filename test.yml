@@ -1,0 +1,43 @@
+---
+- name: Atualização do Sistema
+  hosts: all
+  tasks:
+  - name: Upgrade OS DOIS (apt-get upgrade)
+    ansible.builtin.apt:
+      upgrade: full
+      force_apt_get: yes
+      update_cache: yes
+      autoremove: yes
+      cache_valid_time: 3600
+  
+  - name: Set timezone to Asia/Tokyo
+    community.general.timezone:
+      name: America/Sao_Paulo      
+
+  - name: Ajuste no NTP
+    lineinfile:
+      state: present
+      dest: /etc/systemd/timesyncd.conf 
+      regexp: "#NTP="
+      line: "NTP=a.ntp.br b.ntp.br c.ntp.br"
+
+  - name: Restart service timesyncd
+    ansible.builtin.systemd:
+      name: systemd-timesyncd.service
+      state: restarted
+
+  - name: Ajustando .bashrc
+    block:
+      - name: Ajustando .bashrc
+        lineinfile:
+          state: present
+          dest: /root/.bashrc
+          regexp: "^HISTSIZE=1000"
+          line: "HISTSIZE=10000"
+      - name: Ajustando .bashrc
+        lineinfile:
+          state: present
+          dest: /root/.bashrc
+          regexp: "^HISTFILESIZE=2000"
+          line: "HISTFILESIZE=20000"
+
