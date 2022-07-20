@@ -40,11 +40,10 @@
           dest: /root/.bashrc
           regexp: "^HISTFILESIZE=2000"
           line: "HISTFILESIZE=20000"
-      - name: Ajustando .bashrc
-        lineinfile:
-          state: present
-          dest: /root/.bashrc
-          line: "HISTTIMEFORMAT="[%Y/%m/%d %T] ""
+      - name: Adicionar HISTTIMEFORMAT
+          ansible.builtin.lineinfile:
+          path: /tmp/testfile
+          line: HISTTIMEFORMAT="[%Y/%m/%d %T] "
           create: yes
       - name: Ajustando .bashrc
         lineinfile:
@@ -52,9 +51,3 @@
           dest: /root/.bashrc
           regexp: "^#force_color_prompt=yes"
           line: "force_color_prompt=yes"
-      - name: Ajustando .bashrc
-        lineinfile:
-          state: present
-          dest: /root/.bashrc
-          regexp: "{{ caminhoTirar }}"
-          line: "{{ caminhoMudar }}"
