@@ -43,7 +43,7 @@
       - name: Adicionar HISTTIMEFORMAT
           ansible.builtin.lineinfile:
           path: /tmp/testfile
-          line: HISTTIMEFORMAT="[%Y/%m/%d %T] "
+          line: "HISTTIMEFORMAT="[%Y/%m/%d %T] "
           create: yes
       - name: Ajustando .bashrc
         lineinfile:
