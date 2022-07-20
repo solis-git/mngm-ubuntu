@@ -10,7 +10,7 @@
       autoremove: yes
       cache_valid_time: 3600
   
-  - name: Set timezone to Asia/Tokyo
+  - name: Set timezone to America/Sao_Paulo
     community.general.timezone:
       name: America/Sao_Paulo      
 
@@ -40,4 +40,15 @@
           dest: /root/.bashrc
           regexp: "^HISTFILESIZE=2000"
           line: "HISTFILESIZE=20000"
-
+      - name: Ajustando .bashrc
+        lineinfile:
+          state: present
+          dest: /root/.bashrc
+          regexp: "^#force_color_prompt=yes"
+          line: "force_color_prompt=yes"
+      - name: Ajustando .bashrc
+        lineinfile:
+          state: present
+          dest: /root/.bashrc
+          regexp: "^PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ‘"
+          line: "PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '"
