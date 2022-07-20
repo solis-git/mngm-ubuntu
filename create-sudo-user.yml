@@ -15,7 +15,7 @@
         name: "{{ NewUser }}"
         shell: /bin/bash
         comment: "{{ CommentNewUser }}"
-        groups: sudo
+        groups: "{{ UserGroup }}"
         append: yes
         password: "{{ PasswordNewUser }}"
         createhome: yes
