@@ -40,11 +40,11 @@
           dest: /root/.bashrc
           regexp: "^HISTFILESIZE=2000"
           line: "HISTFILESIZE=20000"
-      - name: Adicionar HISTTIMEFORMAT
-          ansible.builtin.lineinfile:
-          path: /root/.bashrc
-          line: "HISTTIMEFORMAT="[%Y/%m/%d %T] ""
-          create: yes
+      - name: Ajustando .bashrc
+        lineinfile:
+          state: present
+          dest: /root/.bashrc
+          line: "HISTTIMEFORMAT="[%Y/%m/%d %T] ""          
       - name: Ajustando .bashrc
         lineinfile:
           state: present
