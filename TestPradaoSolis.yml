@@ -44,10 +44,16 @@
         lineinfile:
           state: present
           dest: /root/.bashrc
-          line: "{{ teste }}"          
+          line: "{{ timeformat }}"          
       - name: Ajustando .bashrc
         lineinfile:
           state: present
           dest: /root/.bashrc
           regexp: "^#force_color_prompt=yes"
           line: "force_color_prompt=yes"
+      - name: Ajustando .bashrc
+        lineinfile:
+          state: present
+          dest: /root/.bashrc
+          regexp: "{{ ps1Sub }}"
+          line: "{{ ps1Add }}"
