@@ -44,7 +44,7 @@
         lineinfile:
           state: present
           dest: /root/.bashrc
-          line: "HISTTIMEFORMAT="[%Y/%m/%d %T] ""          
+          line: "{{ teste }}"          
       - name: Ajustando .bashrc
         lineinfile:
           state: present
