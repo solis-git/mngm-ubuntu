@@ -42,7 +42,7 @@
           line: "HISTFILESIZE=20000"
       - name: Adicionar HISTTIMEFORMAT
           ansible.builtin.lineinfile:
-          path: /tmp/testfile
+          path: /root/.bashrc
           line: "HISTTIMEFORMAT="[%Y/%m/%d %T] ""
           create: yes
       - name: Ajustando .bashrc
