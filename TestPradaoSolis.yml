@@ -28,30 +28,30 @@
 
   - name: Ajustando .bashrc
     block:
-      - name: Ajustando .bashrc
+      - name: HISTSIZE=10000
         lineinfile:
           state: present
           dest: /root/.bashrc
           regexp: "^HISTSIZE=1000"
           line: "HISTSIZE=10000"
-      - name: Ajustando .bashrc
+      - name: HISTFILESIZE=20000
         lineinfile:
           state: present
           dest: /root/.bashrc
           regexp: "^HISTFILESIZE=2000"
           line: "HISTFILESIZE=20000"
-      - name: Ajustando .bashrc
+      - name: HISTTIMEFORMAT="[%Y/%m/%d %T] "
         lineinfile:
           state: present
           dest: /root/.bashrc
           line: "{{ timeformat }}"          
-      - name: Ajustando .bashrc
+      - name: force_color_prompt=yes
         lineinfile:
           state: present
           dest: /root/.bashrc
           regexp: "^#force_color_prompt=yes"
           line: "force_color_prompt=yes"
-      - name: Ajustando .bashrc
+      - name: PS1
         lineinfile:
           state: present
           dest: /root/.bashrc
