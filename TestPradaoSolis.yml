@@ -44,6 +44,7 @@
         lineinfile:
           state: present
           dest: /root/.bashrc
+          insertafter: "HISTFILESIZE=20000"
           line: "{{ timeformat }}"          
       - name: force_color_prompt=yes
         lineinfile:
