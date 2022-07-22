@@ -43,7 +43,7 @@
       - name: HISTTIMEFORMAT="[%Y/%m/%d %T] "
         lineinfile:
           path: /root/.bashrc
-          insertafter: "HISTFILESIZE=20000"
+          insertafter: "^HISTFILESIZE=20000"
           line: "{{ timeformat }}"          
       - name: force_color_prompt=yes
         lineinfile:
