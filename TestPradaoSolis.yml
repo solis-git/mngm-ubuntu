@@ -55,5 +55,5 @@
         lineinfile:
           state: present
           dest: /root/.bashrc
-          regexp: "^PS1='${debian_chroot:+($debian_chroot)}*"
+          regexp: "^{{ ps2 }}"
           line: "{{ ps1 }}"
