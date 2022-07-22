@@ -55,5 +55,5 @@
         lineinfile:
           state: present
           dest: /root/.bashrc
-          regexp: '^{{ ps1 }}'
-          line: '{{ ps2 }}'
+          regexp: "^{{ ps1 }}"
+          line: "{{ ps2 }}"
